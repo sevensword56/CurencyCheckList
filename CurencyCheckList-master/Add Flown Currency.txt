@@ -1,0 +1,24 @@
+
+Do While Not IsEmpty(Workbook.Sheets(sheetName).Cells(row, 3))
+                
+                iterator = iterator + 1
+                If (Workbook.Sheets(sheetName).Cells(row, 4) = "") Then
+                    Debug.Print row
+                    Dim i As Integer
+                    i = 0
+                
+                    objectArrayList.Add New FlownCurrency
+                    objectArrayList(iterator).PRCurrency = Workbook.Sheets(sheetName).Cells(row, 3)
+                    
+                    Debug.Print objectArrayList(iterator).PRCurrency
+                    
+                    row = row + 1
+                
+                    Do While Not IsEmpty(Workbook.Sheets(sheetName).Cells(row, 4))
+                        objectArrayList(iterator).Employees.Add Workbook.Sheets(sheetName).Cells(row, 4)
+                        Debug.Print objectArrayList(interator).PRCurrency & " " & objectArrayList(iterator).Employees(i)
+                        i = i + 1
+                        row = row + 1
+                    Loop
+                End If
+		Loop
